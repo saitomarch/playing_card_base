@@ -22,6 +22,7 @@ jobs:
           channel: 'beta'
       - run: flutter pub get
       - run: flutter test
+      - run: flutter pub test_coverage
       - uses: codecov/codecov-action@v1
         with:
           token: ${{secrets.CODECOV_TOKEN}}
