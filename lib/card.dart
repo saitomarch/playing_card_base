@@ -14,6 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
+library playing_card_base;
+
 import 'suit.dart';
 
 /// Declares [Card] object
@@ -47,15 +49,13 @@ class Card {
     _number = number;
   }
 
-  Suit get suit => _suit;
-
   /// The [suit] of the card.
+  Suit get suit => _suit;
   Suit _suit;
-
-  int _number;
 
   /// The [number] of the card.
   int get number => _number;
+  int _number;
 
   /// Whether the card is joker
   bool get isJoker => suit == Suit.joker;

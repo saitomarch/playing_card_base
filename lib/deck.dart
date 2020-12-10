@@ -14,6 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
+library playing_card_base;
+
 import 'card.dart';
 import 'suit.dart';
 

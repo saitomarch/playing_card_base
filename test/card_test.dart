@@ -14,8 +14,8 @@ See the License for the specific language governing permissions and
 limitations under the License.
  */
 
-import 'package:card_game/model/common/card.dart';
-import 'package:card_game/model/common/suit.dart';
+import 'package:playing_card_base/card.dart';
+import 'package:playing_card_base/suit.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

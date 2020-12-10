@@ -1,6 +1,6 @@
-# playing_card_base
+# Playing Card Base
 
-A new Flutter package project.
+`playing_card_base` is a library which defines playing cards objects. This is written in Dard/Flutter.
 
 ## Getting Started
 
