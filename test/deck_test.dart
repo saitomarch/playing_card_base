@@ -19,19 +19,19 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('Test valid deck with no Jokers', () {
-    final deck = new Deck(numberOfJokers: 0, multiplier: 1);
+    final deck = Deck(numberOfJokers: 0, multiplier: 1);
     expect(deck.cards.length, 52);
     expect(deck.numberOfJokers, 0);
   });
 
   test('Test valid deck with 1 joker', () {
-    final deck = new Deck(numberOfJokers: 1, multiplier: 1);
+    final deck = Deck(numberOfJokers: 1, multiplier: 1);
     expect(deck.cards.length, 53);
     expect(deck.numberOfJokers, 1);
   });
 
   test('Test valid deck with 2 jokers', () {
-    final deck = new Deck(numberOfJokers: 2, multiplier: 1);
+    final deck = Deck(numberOfJokers: 2, multiplier: 1);
     expect(deck.cards.length, 54);
     expect(deck.numberOfJokers, 2);
   });

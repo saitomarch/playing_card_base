@@ -26,7 +26,7 @@ import 'suit.dart';
 /// multiplier: How many decks should be created. It must be 1 or more.
 ///   2 or more can be used for blackjack.
 class Deck {
-  Deck({int numberOfJokers: 0, int multiplier: 1}) {
+  Deck({int numberOfJokers = 0, int multiplier = 1}) {
     if (numberOfJokers < 0 || numberOfJokers > 2) {
       throw const FormatException('numberOfJokers must be 0, 1 or 2');
     }
