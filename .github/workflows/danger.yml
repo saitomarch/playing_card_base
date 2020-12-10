@@ -32,7 +32,7 @@ jobs:
         with:
           channel: 'beta'
       - run: flutter pub get
-      - run: flutter analyze > flutter_analyze_report.txt || echo "Analyze has error(s)"
+      - run: flutter analyze --write=flutter_analyze_report.txt
       - run: |
           bundle exec danger
         env:
