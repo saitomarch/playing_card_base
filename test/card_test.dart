@@ -23,7 +23,7 @@ void main() {
     final suits = <Suit>[Suit.clubs, Suit.diamonds, Suit.hearts, Suit.spades];
     for (final suit in suits) {
       for (var num = 1; num <= 13; num++) {
-        final card = new Card(suit, num);
+        final card = Card(suit, num);
         expect(card.suit, suit);
         expect(card.number, num);
       }
@@ -32,19 +32,19 @@ void main() {
 
   test('Test valid joker card', () {
     for (var num = 1; num <= 2; num++) {
-      final card = new Card(Suit.joker, num);
+      final card = Card(Suit.joker, num);
       expect(card.isJoker, true);
     }
   });
 
   test('Test invalid card', () {
     // Throws exception when number is 0 or less if non-joker
-    expect(() => new Card(Suit.clubs, 0), throwsFormatException);
+    expect(() => Card(Suit.clubs, 0), throwsFormatException);
     // Throws exception when number is 14 or more if non-joker
-    expect(() => new Card(Suit.diamonds, 14), throwsFormatException);
+    expect(() => Card(Suit.diamonds, 14), throwsFormatException);
     // Throws exception when number is 0 or less if joker
-    expect(() => new Card(Suit.joker, 0), throwsFormatException);
+    expect(() => Card(Suit.joker, 0), throwsFormatException);
     // Throws exception when number is 3 or more if joker
-    expect(() => new Card(Suit.joker, 3), throwsFormatException);
+    expect(() => Card(Suit.joker, 3), throwsFormatException);
   });
 }
