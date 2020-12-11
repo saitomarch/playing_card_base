@@ -22,7 +22,7 @@ import 'suit.dart';
 class Card {
   /// Constructor
   ///
-  /// Throws [FormatException] if below one of conditions:
+  /// Throws [ArgumentError] if below one of conditions:
   ///   * [number] is not 1 to 13 if [suit] is [Suit.clubs], [Suit.diamonds],
   ///     [Suit.hearts] or [Suit.spades].
   ///   * [number] is not 1 or 2 if [suit] is [Suit.joker].
@@ -33,14 +33,14 @@ class Card {
       case Suit.hearts:
       case Suit.spades:
         if (number < 1 || number > 13) {
-          throw const FormatException(
+          throw ArgumentError(
               'number of card for clubs, diamonds, hearts, spades must be '
               '1(ace) to 13(King)');
         }
         break;
       case Suit.joker:
         if (number != 1 && number != 2) {
-          throw const FormatException(
+          throw ArgumentError(
               'number for card for joker must be 1(joker) or 2(extra joker)');
         }
     }

@@ -39,12 +39,12 @@ void main() {
 
   test('Test invalid card', () {
     // Throws exception when number is 0 or less if non-joker
-    expect(() => Card(Suit.clubs, 0), throwsFormatException);
+    expect(() => Card(Suit.clubs, 0), throwsArgumentError);
     // Throws exception when number is 14 or more if non-joker
-    expect(() => Card(Suit.diamonds, 14), throwsFormatException);
+    expect(() => Card(Suit.diamonds, 14), throwsArgumentError);
     // Throws exception when number is 0 or less if joker
-    expect(() => Card(Suit.joker, 0), throwsFormatException);
+    expect(() => Card(Suit.joker, 0), throwsArgumentError);
     // Throws exception when number is 3 or more if joker
-    expect(() => Card(Suit.joker, 3), throwsFormatException);
+    expect(() => Card(Suit.joker, 3), throwsArgumentError);
   });
 }
