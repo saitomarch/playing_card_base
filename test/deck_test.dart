@@ -58,6 +58,11 @@ void main() {
     expect(() => Deck(multiplier: -1), throwsArgumentError);
   });
 
+  test('Throws exception if will draw even emtpy', () {
+    final deck = Deck(multiplier: 0);
+    expect(() => deck.draw(), throwsException);
+  });
+
   test('Test draw successfully', () {
     final deck = Deck(numberOfJokers: 0, multiplier: 1);
     expect(deck.cards.length, 52);
