@@ -20,18 +20,18 @@ import 'card.dart';
 import 'suit.dart';
 
 /// Declares the [Deck] object.
-///
-/// numberOfJokers: How meny jokers in the deck. It must be 0(no jokers) to 2.
-///
-/// multiplier: How many decks should be created. It must be 1 or more.
-///   2 or more can be used for blackjack.
 class Deck {
+  /// Constructor
+  ///
+  /// Throws a [ArgumentError] if one of below conditions:
+  ///   * [numberOfJokers] is not 1 or 2
+  ///   * [multiplier] is less than 0
   Deck({int numberOfJokers = 0, int multiplier = 1}) {
     if (numberOfJokers < 0 || numberOfJokers > 2) {
-      throw const FormatException('numberOfJokers must be 0, 1 or 2');
+      throw ArgumentError('numberOfJokers must be 0, 1 or 2');
     }
-    if (multiplier < 1) {
-      throw const FormatException('multiplier must be more than 1');
+    if (multiplier < 0) {
+      throw ArgumentError('multiplier must be more than 0');
     }
     for (var i = 0; i < multiplier; i++) {
       const suits = <Suit>[Suit.clubs, Suit.diamonds, Suit.hearts, Suit.spades];
@@ -69,6 +69,9 @@ class Deck {
 
   /// Draw a card from the deck.
   Card draw() {
+    if (isEmpty) {
+      throw Exception('Deck cannot draw if empty.');
+    }
     return cards.removeAt(0);
   }
 

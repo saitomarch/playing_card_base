@@ -231,5 +231,3 @@ build-iPhoneSimulator/
 # .rubocop-https?--*
 
 # End of https://www.toptal.com/developers/gitignore/api/flutter,dart,intellij+all,ruby
-
-test/.test_coverage.dart
