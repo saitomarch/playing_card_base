@@ -16,6 +16,8 @@ limitations under the License.
 
 library playing_card_base;
 
+import 'dart:math';
+
 import 'suit.dart';
 
 /// Declares [Card] object
@@ -46,6 +48,38 @@ class Card {
     }
     _suit = suit;
     _number = number;
+  }
+
+  /// Returns [random] card.
+  ///
+  /// If you wish to [allowsJoker], it should be `true`. Otherwise `false`.
+  ///
+  /// Throws [ArgumentError] if [allowsJoker] is `null`.
+  static Card random({bool allowsJoker}) {
+    if (allowsJoker == null) {
+      throw ArgumentError('allowsJoker must be set.');
+    }
+    final random = Random();
+    List<Suit> suits;
+    if (allowsJoker) {
+      suits = [Suit.clubs, Suit.diamonds, Suit.hearts, Suit.spades, Suit.joker];
+    } else {
+      suits = [Suit.clubs, Suit.diamonds, Suit.hearts, Suit.spades];
+    }
+    final suit = suits[random.nextInt(suits.length)];
+    int number;
+    switch (suit) {
+      case Suit.clubs:
+      case Suit.diamonds:
+      case Suit.hearts:
+      case Suit.spades:
+        number = random.nextInt(13) + 1;
+        break;
+      case Suit.joker:
+        number = random.nextInt(2) + 1;
+        break;
+    }
+    return Card(suit, number);
   }
 
   /// The [suit] of the card.
