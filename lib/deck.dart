@@ -30,8 +30,8 @@ class Deck {
     if (numberOfJokers < 0 || numberOfJokers > 2) {
       throw ArgumentError('numberOfJokers must be 0, 1 or 2');
     }
-    if (multiplier < 1) {
-      throw ArgumentError('multiplier must be more than 1');
+    if (multiplier < 0) {
+      throw ArgumentError('multiplier must be more than 0');
     }
     for (var i = 0; i < multiplier; i++) {
       const suits = <Suit>[Suit.clubs, Suit.diamonds, Suit.hearts, Suit.spades];
