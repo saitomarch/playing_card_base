@@ -69,6 +69,9 @@ class Deck {
 
   /// Draw a card from the deck.
   Card draw() {
+    if (isEmpty) {
+      throw Exception('Deck cannot draw if empty.');
+    }
     return cards.removeAt(0);
   }
 
