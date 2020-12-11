@@ -47,4 +47,28 @@ void main() {
     // Throws exception when number is 3 or more if joker
     expect(() => Card(Suit.joker, 3), throwsArgumentError);
   });
+
+  test('Generates successfully random card (no joker)', () {
+    for (var i = 0; i < 255; i++) {
+      expect(() {
+        final card = Card.random(allowsJoker: false);
+        print('Random card generated (no joker): (suit: ' +
+            card.suit.toString() +
+            '. number: ' +
+            card.number.toString());
+      }, isNot(throwsArgumentError));
+    }
+  });
+
+  test('Generates successfully random card (joker)', () {
+    for (var i = 0; i < 255; i++) {
+      expect(() {
+        final card = Card.random(allowsJoker: true);
+        print('Random card generated (allows joker): (suit: ' +
+            card.suit.toString() +
+            '. number: ' +
+            card.number.toString());
+      }, isNot(throwsArgumentError));
+    }
+  });
 }
