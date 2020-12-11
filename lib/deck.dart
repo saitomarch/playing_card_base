@@ -20,12 +20,12 @@ import 'card.dart';
 import 'suit.dart';
 
 /// Declares the [Deck] object.
-///
-/// numberOfJokers: How meny jokers in the deck. It must be 0(no jokers) to 2.
-///
-/// multiplier: How many decks should be created. It must be 1 or more.
-///   2 or more can be used for blackjack.
 class Deck {
+  /// Constructor
+  ///
+  /// Throws a [FormatException] if one of below conditions:
+  ///   * [numberOfJokers] is not 1 or 2
+  ///   * [multiplier] is less than 0
   Deck({int numberOfJokers = 0, int multiplier = 1}) {
     if (numberOfJokers < 0 || numberOfJokers > 2) {
       throw const FormatException('numberOfJokers must be 0, 1 or 2');

@@ -22,11 +22,10 @@ import 'suit.dart';
 class Card {
   /// Constructor
   ///
-  /// For the [suit] of the card, it must be clubs, diamonds, hearts, spades
-  /// or joker.
-  ///
-  /// For the [number] of the card, it must be 1 to 13 for non-joker,
-  /// must be 1 or 2 for joker.
+  /// Throws [FormatException] if below one of conditions:
+  ///   * [number] is not 1 to 13 if [suit] is [Suit.clubs], [Suit.diamonds],
+  ///     [Suit.hearts] or [Suit.spades].
+  ///   * [number] is not 1 or 2 if [suit] is [Suit.joker].
   Card(Suit suit, int number) {
     switch (suit) {
       case Suit.clubs:
