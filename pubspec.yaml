@@ -3,7 +3,6 @@ description: Base library for playing cards.
 version: 0.0.1
 author: SAITO Tomomi
 homepage: https://project-flora.net
-publish_to: none
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
