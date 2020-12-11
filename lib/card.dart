@@ -53,7 +53,12 @@ class Card {
   /// Returns [random] card.
   ///
   /// If you wish to [allowsJoker], it should be `true`. Otherwise `false`.
+  ///
+  /// Throws [ArgumentError] if [allowsJoker] is `null`.
   static Card random({bool allowsJoker}) {
+    if (allowsJoker == null) {
+      throw ArgumentError('allowsJoker must be set.');
+    }
     final random = Random();
     List<Suit> suits;
     if (allowsJoker) {

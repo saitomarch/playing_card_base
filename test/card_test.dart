@@ -71,4 +71,8 @@ void main() {
       }, isNot(throwsArgumentError));
     }
   });
+
+  test('Throws error if allowsJoker is not set', () {
+    expect(() => Card.random(), throwsArgumentError);
+  });
 }
