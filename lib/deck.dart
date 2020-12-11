@@ -23,15 +23,15 @@ import 'suit.dart';
 class Deck {
   /// Constructor
   ///
-  /// Throws a [FormatException] if one of below conditions:
+  /// Throws a [ArgumentError] if one of below conditions:
   ///   * [numberOfJokers] is not 1 or 2
   ///   * [multiplier] is less than 0
   Deck({int numberOfJokers = 0, int multiplier = 1}) {
     if (numberOfJokers < 0 || numberOfJokers > 2) {
-      throw const FormatException('numberOfJokers must be 0, 1 or 2');
+      throw ArgumentError('numberOfJokers must be 0, 1 or 2');
     }
     if (multiplier < 1) {
-      throw const FormatException('multiplier must be more than 1');
+      throw ArgumentError('multiplier must be more than 1');
     }
     for (var i = 0; i < multiplier; i++) {
       const suits = <Suit>[Suit.clubs, Suit.diamonds, Suit.hearts, Suit.spades];
